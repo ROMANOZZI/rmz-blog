@@ -1,0 +1,59 @@
+#root {
+  --body-bg: #c1bdba;
+  --form-bg: rgba(19, 35, 47, 0.9);
+  --white: #ffffff;
+  --main: #1ab188;
+  --main-light: lighten(#1ab188, 5%);
+  --main-dark: darken(#1ab188, 5%);
+  --gray-light: #a0b3b0;
+  --gray: #ddd;
+  --thin: 300;
+  --normal: 400;
+  --bold: 600;
+}
+
+body {
+  background: var(--body-bg);
+  font-family: "Titillium Web", sans-serif;
+  color: var(--white);
+  height: 100vh;
+  width: 100%;
+}
+.form {
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 40px;
+  background: var(--form-bg);
+}
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  margin: 30px auto;
+
+  font-family: "Titillium Web", sans-serif;
+  font-weight: var(--normal);
+  color: var(--white);
+}
+.tab {
+  max-width: 50%;
+  margin-right: 0;
+  font-size: 1.625rem;
+  width: 50%;
+  height: 100%;
+  line-height: 1.5em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--gray);
+  background-color: var(--gray-light);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.Light {
+  font-family: "Titillium Web", sans-serif;
+  background-color: #1ab188;
+  color: var(--white);
+}
