@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 const SignUp = ({ form, setForm }) => {
   return (
@@ -62,7 +63,24 @@ const SignUp = ({ form, setForm }) => {
         />
       </div>
 
-      <button className="btn signup">GET STARTED</button>
+      <button
+        className="btn signup"
+        onClick={() => {
+          if (form.first && form.second && form.email && form.password) {
+            axios
+              .post("http://localhost:4000/signup", {
+                name: form.first + " " + form.second,
+                email: form.email,
+                password: form.password,
+              })
+              .then((res) => {
+                console.log("congrats babe");
+              });
+          }
+        }}
+      >
+        GET STARTED
+      </button>
     </div>
   );
 };

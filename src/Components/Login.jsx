@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 const Login = ({ form, setForm }) => {
   return (
@@ -37,7 +38,24 @@ const Login = ({ form, setForm }) => {
       <a href="#" className="link">
         Forgot Password?
       </a>
-      <button className="btn">Login</button>
+      <button
+        className="btn"
+        onClick={(e) => {
+          if (form.email && form.password) {
+            axios
+              .post("http://localhost:4000/login", { user: { ...form } })
+              .then((res) => {
+                localStorage.setItem("accessToken", res.data.accessToken);
+                localStorage.setItem("refreshToken", res.data.refreshToken);
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          }
+        }}
+      >
+        Login
+      </button>
     </div>
   );
 };
