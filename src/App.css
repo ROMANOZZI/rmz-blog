@@ -1,6 +1,6 @@
 #root {
   --body-bg: #a3a2a0;
-  --form-bg: rgba(19, 35, 47, 0.9);
+  --form-bg: rgb(19, 35, 47);
   --white: #ffffff;
   --main: #1ab188;
   --main-light: lighten(#1ab188, 5%);
@@ -22,6 +22,7 @@ body {
   color: var(--white);
 
   width: 100%;
+  height: 100%;
 }
 .form {
   margin: 10rem auto;
@@ -79,6 +80,10 @@ h2 {
   font-family: "Titillium Web", sans-serif;
   font-weight: var(--normal);
   margin-bottom: 1.5em;
+}
+.logo {
+  width: 100%;
+  padding: 1em 0 0em 1em;
 }
 input {
   position: relative;
@@ -165,8 +170,10 @@ label {
   width: 100%;
   height: fit-content;
   background-color: var(--form-bg);
+  opacity: 1;
   display: flex;
   color: #fff;
+  z-index: 3;
 }
 .NavBar {
   width: 100%;
@@ -174,6 +181,7 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 @media screen and (width<500px) {
   .form {
@@ -190,4 +198,205 @@ label {
   .ss {
     margin: 0;
   }
+  .feed-container {
+    margin: 0;
+    padding: 1.5em 0 !important;
+  }
+  .feed {
+    margin: 0;
+    position: relative;
+    min-width: 100vw;
+    padding: 0em 0 1em 0 !important;
+  }
+  .post {
+    min-width: 100% !important;
+  }
+  .reacts-container {
+    padding: 1em;
+    width: 100% !important;
+    font-size: 0.8em;
+  }
+  .reacts-container p {
+    display: none;
+  }
+  .logout {
+    margin-right: -1.5em;
+  }
+}
+.feed-container {
+  width: 100%;
+  margin: 12.4rem auto 0 auto;
+  padding: 1em;
+  position: relative;
+
+  color: var(--white);
+  background-color: var(--form-bg);
+}
+.feed-container h1 {
+  width: fit-content;
+  font-size: 2.5rem;
+  font-weight: var(--bold);
+  font-family: "Titillium Web", sans-serif;
+  color: var(--white);
+  margin: 0.5em 0;
+  margin-inline: auto;
+}
+.feed {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: var(--main);
+  border-radius: 2em;
+  padding: 3em;
+}
+.post {
+  position: relative;
+  z-index: 0;
+  background-color: var(--white);
+  color: #000;
+  border-radius: 1em;
+  overflow: hidden;
+  max-width: 80%;
+
+  margin: 1em auto;
+  box-shadow: 0 0.5rem 3rem 0 rgba(0, 0, 0, 0.2);
+  font-size: 1.25em;
+  font-family: "Titillium Web", sans-serif;
+}
+.feed-container h2 {
+  font-size: 1.5rem;
+  font-weight: var(--bold);
+  font-family: "Titillium Web", sans-serif;
+  color: #000;
+  margin: 0.5em 0;
+  margin-inline: auto;
+}
+.reacts-container {
+  width: 100%;
+  position: relative;
+  top: 2em;
+  padding: 1em 1em 0.5em 1em;
+  margin: 0 0;
+
+  border: var(--form-bg) 4px solid;
+  border-left: none;
+  border-right: none;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0;
+}
+.react {
+  display: flex;
+  flex-direction: row;
+  font: 1.25em "Titillium Web", sans-serif;
+  position: relative;
+  bottom: 0.5em;
+  margin: 0 0.2em;
+  background-color: var(--gray);
+  border-radius: 1em;
+  width: 50%;
+  justify-content: center;
+  padding: 0.5em;
+}
+.react:hover {
+  background-color: var(--main);
+  color: var(--white);
+}
+.react:hover img {
+  filter: invert(100%);
+}
+.react img {
+  width: 1.5em;
+}
+.react p {
+  margin: 0.5em;
+}
+.react:hover {
+  cursor: pointer;
+}
+.text-container {
+  padding: 1em;
+}
+.logout {
+  background-color: #088b68;
+  font: 1.5em "Titillium Web", sans-serif;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  position: fixed;
+  right: 2em;
+  top: 1.5em;
+}
+
+.noPosts {
+  width: 100%;
+  font-size: 3em;
+  font-weight: var(--bold);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+.noPosts img {
+  width: 3em;
+  margin-inline: auto;
+}
+.noPosts p {
+  margin-inline: auto;
+}
+
+.post-container {
+  margin: 15em auto;
+  margin-bottom: 0;
+  position: relative;
+}
+.post-container input {
+  color: #000;
+  font-size: 1.5em;
+  font-family: "Titillium Web", sans-serif;
+  padding: 0.5em;
+  margin: 0 0 1em 0;
+}
+
+.post-container textarea {
+  min-width: 100%;
+
+  border: none;
+  color: #000;
+  font-size: 1.5em;
+  font-family: "Titillium Web", sans-serif;
+  resize: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+.post-container button {
+  background-color: var(--main);
+  font-size: 1.5em;
+  font-weight: var(--bold);
+  font-family: "Titillium Web", sans-serif;
+  color: var(--white);
+  padding: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  margin-inline: auto;
+  margin: 0.5em 0em;
+  border-radius: 1em;
+  position: relative;
+  left: 45%;
+}
+.addPost {
+  position: fixed;
+  top: 40%;
+  left: 30%;
+  background-color: #1ab188;
+  font-size: 1.5em;
+  font-weight: var(--bold);
+  font-family: "Titillium Web", sans-serif;
+  color: var(--white);
+  padding: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }

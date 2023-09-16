@@ -1,14 +1,15 @@
 import React from "react";
 import { createContext } from "react";
-const postsContext = createContext();
+const PostsContext = createContext([]);
 
 const PostsContextProvider = ({ children }) => {
+  let [myposts, setMyPosts] = React.useState([]);
   let [posts, setPosts] = React.useState([]);
   return (
-    <postsContext.Provider value={[posts, setPosts]}>
+    <PostsContext.Provider value={[posts, setPosts, myposts, setMyPosts]}>
       {children}
-    </postsContext.Provider>
+    </PostsContext.Provider>
   );
 };
 
-export { postsContext, PostsContextProvider };
+export { PostsContext, PostsContextProvider };
